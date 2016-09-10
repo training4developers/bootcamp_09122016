@@ -1,0 +1,23 @@
+mutation {
+  insertWidget(widget: {
+    name: "New Widget",
+    description: "New Widget Description",
+    color: "red",
+    size: "small",
+    quantity: 23,
+    owner: {
+      id: 10,
+      name: "Jimmy"
+    }}) {
+    id,
+    name,
+    description,
+    color,
+    size,
+    quantity,
+    owner {
+      id,
+      name
+    }
+  }
+}

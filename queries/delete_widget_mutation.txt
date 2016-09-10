@@ -1,0 +1,14 @@
+mutation {
+  deleteWidget(widgetId: "5782bff7e6d94e08213dbb92") {
+    id,
+    name,
+    description,
+    color,
+    size,
+    quantity,
+    owner {
+      id,
+      name
+    }
+  }
+}

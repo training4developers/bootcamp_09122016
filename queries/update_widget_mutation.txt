@@ -1,0 +1,24 @@
+mutation {
+  updateWidget(widget: {
+		id: "5782bff7e6d94e08213dbb92",
+    name: "New Widget",
+    description: "New Widget Description",
+    color: "red",
+    size: "small",
+    quantity: 23,
+    owner: {
+      id: 10,
+      name: "Jimmy"
+    }}) {
+    id,
+    name,
+    description,
+    color,
+    size,
+    quantity,
+    owner {
+      id,
+      name
+    }
+  }
+}
