@@ -30,7 +30,9 @@ export default function(config) {
 		app.use(express.static(config.webServer.folder));
 
 		server.listen(config.webServer.port, () =>
-			console.log(`web server running on port ${config.webServer.port}`));
+			console.log(`web server running on port ${config.webServer.port}
+please do not close this terminal window
+please use a new terminal window to run additional commands`));
 
 	}).catch(err => {
 		console.log(err.message || err);

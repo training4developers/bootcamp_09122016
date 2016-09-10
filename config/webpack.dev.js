@@ -1,7 +1,7 @@
 'use strict';
 
 // loaded the web server settings from package.json
-const config = require('../config');
+const { webServer, mongoServer } = require('../package.json');
 
 // merge the common configuration with the environment specific configuration
 module.exports = require('webpack-merge')(require('./webpack.common.js'), {
@@ -19,8 +19,8 @@ module.exports = require('webpack-merge')(require('./webpack.common.js'), {
   // file
   // file name is the name of the files, where [name] is the name of each entry point
   output: {
-    path: require('./helpers').root(config.webServer.folder),
-    publicPath: `${config.webServer.protocol}://${config.webServer.host}:${config.webServer.port}/`,
+    path: require('./helpers').root(webServer.folder),
+    publicPath: `${webServer.protocol}://${webServer.host}:${webServer.port}/`,
     filename: '[name].js'
   }
 
