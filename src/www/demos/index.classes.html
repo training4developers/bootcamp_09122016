@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+	</head>
+
+	<body>
+		
+		<script>
+
+			'use strict';
+
+			class Person {
+
+				constructor(firstName, lastName) {
+					this.firstName = firstName;
+					this.lastName = lastName;
+				}
+
+				getFullName() {
+					return this.firstName + ' ' + this.lastName;
+				}
+
+			}
+
+			class Student extends Person {
+
+				constructor(studentId, firstName, lastName) {
+					super(firstName, lastName);
+					this.studentId = studentId;
+				}
+
+				getRecordInfo() {
+					return this.studentId + ' ' + this.lastName + ', ' + this.firstName;
+				}
+
+			}
+
+			var s = new Student(1, 'Bob','Smith');
+			console.log(s.getFullName());
+			console.log(s.getRecordInfo());
+
+			// var p2 = new Person('Jenny','Smith');
+			// console.log(p2.getFullName());
+
+			// console.log(p.getFullName === p2.getFullName);
+
+			console.dir(s);
+			console.dir(Student);
+
+
+
+		</script>
+
+	</body>
+
+</html>

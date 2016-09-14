@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+		<style>
+
+			body {
+				margin:0;
+				padding:0;
+			}
+
+			body > div {
+				position:absolute;
+				top:0; bottom:0; left:0; right:0;
+				border: 2px solid red;
+				display:flex;
+				flex-direction: row;
+				/*flex-wrap:wrap;*/
+				justify-content:flex-start;
+				align-items:flex-start;
+			}
+
+			div > div {
+				border: 2px solid blue;
+				padding:5px;
+				/*width:33%;*/
+				order:1;
+				flex-grow:1;
+			}
+
+			div > div:nth-child(3) {
+				/*padding-top:100px;*/
+				/*order:0;*/
+				flex-shrink:2;
+				flex-basis: 300px;
+				align-self: flex-end;
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<div>
+			<div>Item 1</div>
+			<div>Item 2</div>
+			<div>Item 3</div>
+			<div>Item 4</div>
+			<div>Item 5</div>
+		</div>
+
+
+	</body>
+
+</html>

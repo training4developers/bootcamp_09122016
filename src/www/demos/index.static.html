@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+	</head>
+
+	<body>
+		
+		<script>
+
+			'use strict';
+
+			class Person {
+
+				constructor(firstName, lastName) {
+					this.firstName = firstName;
+					this.lastName = lastName;
+
+				}
+
+				static create(fullName) {
+					return new Person(...fullName.split(' '));
+				}
+
+			}
+
+			console.dir(Person.create('Harris Borawski'));
+
+			console.dir(Person);
+
+
+
+
+		</script>
+
+	</body>
+
+</html>

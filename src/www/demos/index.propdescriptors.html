@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+	</head>
+
+	<body>
+		
+		<script>
+
+			'use strict';
+
+			var o = {};
+
+			function Person2() { }
+
+			Object.defineProperty(Person2.prototype, 'firstName', {
+				configurable: true,
+				enumerable: true,
+				// writable: true,
+				// value: 'Bob',
+				get: function() {
+					console.log('getting the first name');
+					return this._firstName;
+				},
+				set: function(value) {
+					console.log('setting the first name');
+					this._firstName = value;
+				}
+			});
+
+			o.firstName = 'Bob';
+			console.log(o.firstName);
+			o.firstName = 'John';
+			console.log(o.firstName);
+
+			class Person {
+
+				constructor() {
+					this._firstName = null;
+				}
+
+				get firstName() {
+					return this._firstName;
+				}
+
+				set firstName(value) {
+					this._firstName = value;
+				}
+
+			}
+
+
+
+		</script>
+
+	</body>
+
+</html>

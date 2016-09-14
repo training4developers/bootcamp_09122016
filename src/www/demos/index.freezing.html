@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+	</head>
+
+	<body>
+		
+		<script>
+
+			'use strict';
+
+			var o = {
+				someProp: 'Hi Everyone! Smile!'
+			};
+
+			//Object.preventExtensions(o);
+			//Object.seal(o);
+			Object.freeze(o);
+
+			//o.newProp = "Do not smile!";
+			//o.someProp = "Time to go home...";
+
+			console.log(Object.isExtensible(o));
+			console.log(Object.isSealed(o));
+			console.log(Object.isFrozen(o));
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
