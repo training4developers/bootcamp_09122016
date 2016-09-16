@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+	</head>
+
+	<body>
+
+		<h1>Bucket List</h1>
+		<ul id="bucket-list">
+			<li class='travel'>Go to Europe</li>
+			<li class='food'>Hotdog Eat Contest</li>
+			<li class='food'>Cook like a Michelin Star chef</li>
+			<li class='adventure'>Skydiving</li>
+			<li class='fitness'>1000 pound club</li>
+		</ul>
+		
+		<script>
+
+			'use strict';
+
+			console.dir(document.getElementById('bucket-list'));
+			console.dir(document.getElementsByTagName('li'));
+			console.dir(document.getElementsByTagName('li'));
+			console.dir(document.getElementsByClassName('food'));
+
+			console.dir(document.querySelector('#bucket-list'));
+			console.dir(document.querySelector('li'));
+			console.dir(document.querySelectorAll('li'));
+			console.dir(document.querySelectorAll('.food'));
+
+			let div = document.createElement('div');
+			div.innerText = '<b id="some-id">Hi Class!</b>';
+			//div.innerHTML = '<b id="some-id">Hi Class!</b>';
+
+			const body = document.querySelector('body');
+
+			body.appendChild(div);
+
+			function buttonClick() {
+				console.log('I was clicked!');
+			}
+
+			let button = document.createElement('button');
+			button.innerText = 'Click me!';
+			button.addEventListener('click', buttonClick);
+
+			body.appendChild(button);
+
+			setTimeout(function() {
+				button.removeEventListener('click', buttonClick);
+			}, 5000);
+
+
+
+
+
+
+
+
+
+		</script>
+
+	</body>
+
+</html>

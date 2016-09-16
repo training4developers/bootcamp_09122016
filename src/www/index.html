@@ -7,54 +7,7 @@
 	</head>
 
 	<body>
-		
-		<script>
-
-			'use strict';
-
-			var youngMan = new Promise(function youngLady(resolve, reject) {
-
-				setTimeout(function() {
-					resolve('she is delighted to say yes!');
-				}, 2000);
-
-			});
-
-			youngMan.then(function(results) {
-				console.log('she said yes!');
-				console.log(results);
-
-				//return "she made me sign a prenup...";
-				//throw new Error('could not agree on a date...');
-				return Promise.reject('could not agree on a date...');
-
-			}).then(function(results) {
-
-				console.log(results);
-			
-				return new Promise(function(resolve, reject) {
-
-					setTimeout(function() {
-						resolve('McDonalds had an opening...');
-					}, 2000);
-
-				});
-				
-	
-			}).then(function(results) {
-			
-				console.log(results);
-	
-			}).catch(function(results) {
-				//console.log('she said no!');
-				console.log(results);
-			});
-
-			console.log('young man is waiting...');
-
-
-		</script>
-
+		<main></main>
 	</body>
 
 </html>

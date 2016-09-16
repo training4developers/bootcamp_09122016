@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>React/Relay/GraphQL Starter Application</title>
+	</head>
+
+	<body>
+		
+		<script>
+
+			'use strict';
+
+			const p1 = new Promise(resolve => setTimeout(() => resolve('a'), 2000));
+			const p2 = new Promise(resolve => setTimeout(() => resolve('b'), 4000));
+			const p3 = new Promise((resolve, reject) => setTimeout(() => reject('c'), 6000));
+			const p4 = new Promise(resolve => setTimeout(() => resolve('d'), 8000));
+
+			p1.then(results => console.log('p1 ' + results));
+			p2.then(results => console.log('p2 ' + results));
+			p3.then(results => console.log('p3 ' + results))
+				.catch(results => console.log('p3 rejected: ' + results));
+			p4.then(results => console.log('p4 ' + results));
+
+			Promise.all([p1,p2,p3,p4]).then(function(results) {
+				console.log('all resolved');
+				console.log(results);
+			}).catch(function(results) {
+				console.log('one failed');
+				console.log(results);
+			});
+
+		</script>
+
+	</body>
+
+</html>
