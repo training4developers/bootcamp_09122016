@@ -1,0 +1,13 @@
+PropTypes & Default Values - done
+Key Again - done
+Ref - done
+Dangerously Set Inner HTML - done
+All Form Controls - done
+
+Inline Editing of Table
+
+Uncontrolled Components
+Transferring Props, Other Props
+Object.assign
+Event Handlers, Lifecycle
+Bootstrap
