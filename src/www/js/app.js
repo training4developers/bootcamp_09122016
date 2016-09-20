@@ -1,38 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { WebSiteListHeader as TheHeader } from './components/web-site-list-header';
+import { WebSiteList } from './components/web-site-list';
+import { WebSiteItemForm } from './components/web-site-item-form';
+
 class HelloWorld extends React.Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
-			newItem: '',
 			items: this.props.items.concat()
 		};
-		this.onChange = this.onChange.bind(this);
+		
 		this.onClick = this.onClick.bind(this);
+
+		setTimeout(() => {
+
+			console.log('set timeout executed');
+
+			this.setState({
+				items: this.props.items.slice(0, 1)
+					.concat(this.props.items.slice(2))
+			});
+
+		}, 2000);
 	}
 
-	onChange(e) {
+	onClick(newItem) {
 		this.setState({
-			[e.target.name]: e.target.value
-		});
-	}
-
-	onClick() {
-		this.setState({
-			items: this.state.items.concat(this.state.newItem),
-			newItem: ''
+			items: this.state.items.concat(newItem)
 		});
 	}
 
 	render() {
-		const message = 'Websites We Like To Visit!';
+		const message = 'Websites We Like To Visit!!!';
 		return <div className="fun-list">
-			<h1>{message}</h1>
-			<ul>{this.state.items.map(item => <li>{item}</li>)}</ul>
-			<label htmlFor="new-item">New Item</label>
-			<input type="text" id="new-item" name="newItem" value={this.state.newItem} onChange={this.onChange} />
-			<button onClick={this.onClick}>Add Item</button>
+			<TheHeader message={message} />
+			<WebSiteList items={this.state.items} />
+			<WebSiteItemForm addNewItem={this.onClick} />
+
 		</div>;
 	}
 

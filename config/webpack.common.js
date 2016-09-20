@@ -36,7 +36,7 @@ module.exports = {
           passPerPreset: true,
           presets: [
             // Babel Relay Plugin path is relative to /src/www/js
-            { 'plugins': [ '../../../build/babelRelayPlugin' ] },
+            //{ 'plugins': [ '../../../build/babelRelayPlugin' ] },
             'react', 'es2015', 'stage-0']
         }
       },
