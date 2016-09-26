@@ -1,25 +1,4 @@
-@import 'theme';
 
-.important-text {
-	font-weight:bold;
-}
-
-@mixin borderImage($image-url) {
-
-	-moz-border-image: url($image-url);
-	-webkit-border-image: url($image-url);
-}
-
-
-body {
-	color: $text-color;
-
-	p {
-		@extend .important-text;
-		@include borderImage('i.jpg');
-	}
-
-}
 
 
 

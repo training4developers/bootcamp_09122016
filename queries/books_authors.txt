@@ -1,0 +1,80 @@
+# query
+
+query {
+  books(id: 2) {
+    id
+    price(currency: "CAD")
+    author {
+      id
+      name
+    }
+  }
+}
+
+# mutation 
+
+mutation insertAuthor($author: InputAuthor) {
+  insertAuthor(author: $author) {
+    name
+  }
+}
+
+{
+	"author": { "name": "Annie Smith" }
+}
+
+# fragment
+
+query {
+  authors {
+    ...a
+  }
+}
+
+fragment a on Author {
+  id
+  name
+}
+
+# variables
+
+query($bookId: Int) {
+  books(id: $bookId) {
+    title
+  }
+}
+
+{
+  "bookId": 2
+}
+
+# alias 
+query {
+	primaryBook : books(id: 2) {
+    title
+  },
+	secondaryBook : books(id: 2) {
+    title
+  }
+}
+
+# schema
+
+query { __schema { types {
+  kind
+  name
+  description
+} } }
+
+# type 
+query { __type(name: "Book") { 
+
+  name
+  fields {
+    name
+    type {
+      name
+    }
+  }
+
+} }

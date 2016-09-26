@@ -1,31 +1,29 @@
 import { GraphQLObjectType } from 'graphql';
 import { globalIdField, connectionArgs, connectionFromPromisedArray } from 'graphql-relay';
-import { nodeInterface } from '../node-definitions';
-import { registerType } from '../resolve-type';
-import { getUsers, getWidgets, getViewer } from '../../database';
+import { nodeInterface } from '../../relay/node-definitions';
+import { registerType } from '../../relay/resolve-type';
+import { getViewer, getPeople } from '../../peopledb';
 import Viewer from '../../models/viewer';
-import { widgetConnection } from '../connections/widget-connection';
-import { userConnection } from '../connections/user-connection';
+import { personConnection } from '../connections/person-connection';
 
 export const viewerType = new GraphQLObjectType({
 
 	name: 'Viewer',
 	fields: () => ({
+
 		id: globalIdField('Viewer'),
-		users: {
-			type: userConnection,
-			description: 'A list of users',
+		
+		people: {
+			type: personConnection,
+			description: 'A list of people',
 			args: connectionArgs,
-			resolve: (_, args) => connectionFromPromisedArray(getUsers(), args)
-		},
-		widgets: {
-			type: widgetConnection,
-			description: 'A list of widgets',
-			args: connectionArgs,
-			resolve: (_, args) => connectionFromPromisedArray(getWidgets(), args)
+			resolve: (_, args) => connectionFromPromisedArray(getPeople(), args)
 		}
+
+
 	}),
 	interfaces: () => [nodeInterface]
+
 });
 
 registerType(Viewer, viewerType, getViewer);

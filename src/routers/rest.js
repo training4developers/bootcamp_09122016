@@ -1,11 +1,9 @@
-"use strict";
-
-import System from "../systemjs";
-import path from "path";
-import express from "express";
+import System from '../systemjs';
+import path from 'path';
+import express from 'express';
 import {
 	toCollectionName as pluralize
-} from "mongoose/lib/utils";
+} from 'mongoose/lib/utils';
 
 export default function(modelName) {
 
@@ -15,7 +13,7 @@ export default function(modelName) {
 	return System.import(path.join(__dirname, `../mongoose/${modelName}`)).then((DataModel) => {
 
 		// collection uri
-		router.route("/" + collectionName)
+		router.route('/' + collectionName)
 			.get(function(req, res) {
 				DataModel.find({}, function(err, results) {
 					if (err) {
@@ -39,7 +37,7 @@ export default function(modelName) {
 			});
 
 		// element uri
-		router.route("/" + collectionName + "/:id")
+		router.route('/' + collectionName + '/:id')
 			.get(function(req, res) {
 				DataModel.findById(req.params.id,
 					function(err, result) {

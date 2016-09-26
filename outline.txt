@@ -3,11 +3,12 @@ Key Again - done
 Ref - done
 Dangerously Set Inner HTML - done
 All Form Controls - done
+Inline Editing of Table - done
+Object.assign - done
+Event Handlers, Lifecycle - done
 
-Inline Editing of Table
-
-Uncontrolled Components
+Uncontrolled Controls
 Transferring Props, Other Props
-Object.assign
-Event Handlers, Lifecycle
+Routing
+
 Bootstrap
